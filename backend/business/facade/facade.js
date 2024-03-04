@@ -23,9 +23,6 @@ class Facade extends BaseCore {
         return this._personComponent.addPerson(person);
     }
 
-    async delPerson(id) {
-        return this._personComponent.delPerson(id);
-    }
 
     async getDetailPerson(id) {
         return this._personComponent.getDetailPerson(id);

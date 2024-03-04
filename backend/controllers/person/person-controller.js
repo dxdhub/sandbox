@@ -92,25 +92,6 @@ class PersonController extends BaseController {
         }
     }
 
-    async del(req, res) {
-        const id = req.body.id;
-        console.log(id);
-        try {
-
-            const person = await this._facade.getDetailPerson(id);
-
-            if (!person) {
-                return this._handleError('Person does not exist', res);
-            }
-
-            let data = await this._facade.delPerson(id);
-            this._handleResult(data, res);
-        } catch (error) {
-            this._handleError(error.message, res);
-        }
-
-    }
-
 }
 
 module.exports = PersonController;

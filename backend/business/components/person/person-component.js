@@ -63,25 +63,6 @@ class PersonComponent extends BaseCore {
 
         return result;
     }
-    async delPerson(id) {
-        if (!id) {
-            throw {
-                message: "Invalid input"
-            }
-        }
-
-        let person = await this._personEntity.findById(id);
-
-        if (!person) {
-            throw {
-                message: "Person does not exist"
-            }
-
-        }
-
-        await this._personEntity.remove(id);
-        return true;
-    }
 
 }
 
